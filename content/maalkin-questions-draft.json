@@ -1,0 +1,96 @@
+{
+  "status": "DRAFT_NOT_PUBLISHED",
+  "notes": "Ten two-option questions. correctAnswer must be set to 0 or 1 by Susan before any scoring or public release. Current live quiz uses four choices and remains unchanged.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "When I'm eating something I really like, what happens to the best bite?",
+      "options": [
+        "I save it for the very end",
+        "I eat it first, before anything else"
+      ],
+      "correctAnswer": null
+    },
+    {
+      "id": 2,
+      "question": "If someone says 'we need to talk' with absolutely no context, what do I do first?",
+      "options": [
+        "Replay every conversation to find out what I did",
+        "Reply 'about what?' and refuse to overthink it"
+      ],
+      "correctAnswer": null
+    },
+    {
+      "id": 3,
+      "question": "If I discover a song that hits perfectly, what do I actually repeat?",
+      "options": [
+        "One exact ten-second part",
+        "The entire song from the beginning"
+      ],
+      "correctAnswer": null
+    },
+    {
+      "id": 4,
+      "question": "When I get a message I wasn't expecting at 2 AM, what do I check first?",
+      "options": [
+        "The sender's name",
+        "The notification preview"
+      ],
+      "correctAnswer": null
+    },
+    {
+      "id": 5,
+      "question": "If there's only one bite left of something I love, what do I do?",
+      "options": [
+        "Offer it to the other person",
+        "Keep the last bite for myself"
+      ],
+      "correctAnswer": null
+    },
+    {
+      "id": 6,
+      "question": "If an argument ends and I think of the perfect comeback five minutes later, what happens?",
+      "options": [
+        "I send it anyway",
+        "I save it for a future argument"
+      ],
+      "correctAnswer": null
+    },
+    {
+      "id": 7,
+      "question": "If I wake up and see 12 missed messages from the same person, what's my first instinct?",
+      "options": [
+        "Read the last message first",
+        "Scroll up and start at the beginning"
+      ],
+      "correctAnswer": null
+    },
+    {
+      "id": 8,
+      "question": "When I need to pick between two equally good options, what breaks the tie?",
+      "options": [
+        "A tiny, oddly specific detail",
+        "Whichever option I saw first"
+      ],
+      "correctAnswer": null
+    },
+    {
+      "id": 9,
+      "question": "If my phone is at 1% but I'm in the middle of a good conversation, what do I do?",
+      "options": [
+        "Find a charger and keep talking",
+        "Send a dramatic goodbye before it dies"
+      ],
+      "correctAnswer": null
+    },
+    {
+      "id": 10,
+      "question": "If I accidentally send a message to the wrong chat, what's my first move?",
+      "options": [
+        "Delete it immediately and pretend nothing happened",
+        "Explain myself before they can react"
+      ],
+      "correctAnswer": null
+    }
+  ]
+}
