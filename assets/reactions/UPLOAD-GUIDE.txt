@@ -1,0 +1,5 @@
+11 new wrong reaction images, in locked escalation order.
+Upload the 11 PNG files (not this zip) to assets/reactions in GitHub.
+Do not rename/overwrite the existing wrong-0.png through wrong-9.png.
+These new files are named wrong-new-01.png through wrong-new-11.png.
+The website code must be updated to use these new images after upload; uploading alone will not activate them.
