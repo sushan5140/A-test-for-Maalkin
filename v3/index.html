@@ -242,6 +242,40 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--paper)}.wrap{ma
 .result .v3Secret{padding:23px 17px}
 .result .v3ChapterDivider{margin-top:19px}
 }
+
+/* V3 open-layout pass: wider canvas, free-floating modules */
+body:has(.result) .wrap{max-width:1600px;width:min(100%,1600px);padding-inline:clamp(20px,4vw,64px);box-sizing:border-box}
+.result{--result-width:1240px;width:100%;max-width:1240px;padding:30px 0 85px}
+.result .v3Hero{border:0;background:radial-gradient(ellipse at 85% 14%,#efe5fb 0%,transparent 50%),radial-gradient(ellipse at 10% 90%,#e6f2ff 0%,transparent 49%);box-shadow:none;border-radius:0;padding:clamp(26px,4vw,54px) clamp(8px,2vw,28px)}
+.result .resultsHeroGrid{grid-template-columns:minmax(0,1fr) minmax(185px,255px);gap:clamp(20px,5vw,80px)}
+.result .v3Hero h1{max-width:800px;font-size:clamp(43px,5.5vw,82px)}
+.result .v3ChapterDivider{margin:27px 0 12px;padding:0 8px}
+.result .boardPanel{border:0;border-top:1px solid #e2d6e9;border-bottom:1px solid #e2d6e9;border-radius:0;box-shadow:none;background:transparent;padding:24px 8px 30px}
+.result .boardPanel .scoreRow{border:0;border-bottom:1px solid #e6dce9;background:transparent;border-radius:0;box-shadow:none;padding:17px 14px;margin:0}
+.result .boardPanel .scoreRow:last-child{border-bottom:0}
+.result .boardPanel .scoreboardHead{padding:0 12px}
+.result .resultStage{border:0;border-radius:0;box-shadow:none;background:transparent;grid-template-columns:180px minmax(0,1fr);gap:clamp(22px,4vw,55px);padding:24px 12px}
+.result .resultStage img{width:175px;height:175px;object-fit:contain}
+.result .resultStage h3{font-size:clamp(28px,3vw,43px)}
+.result .resultStage p{font-size:clamp(15px,1.6vw,18px);max-width:780px}
+.result .v3Secret{max-width:none;border:0;border-top:1px solid #e2d6e9;border-radius:0;background:transparent;box-shadow:none;padding:38px clamp(10px,5vw,65px) 25px}
+.result .v3Secret h3{max-width:800px;font-size:clamp(35px,4.3vw,57px)}
+.result .v3Secret .vaultReveal{max-width:390px}
+.result .resultNav{justify-content:center;gap:12px;margin-top:12px}
+.result .v3EndLabel{margin:38px 0 0;text-align:center}
+@media(max-width:720px){
+ body:has(.result) .wrap{padding-inline:18px}
+ .result{padding-top:15px}
+ .result .resultsHeroGrid{grid-template-columns:1fr}
+ .result .v3Hero{padding:15px 2px 30px}
+ .result .v3Hero h1{font-size:clamp(39px,10vw,58px)}
+ .result .boardPanel{padding:15px 0 20px}
+ .result .resultStage{grid-template-columns:105px minmax(0,1fr);gap:14px;padding:18px 0}
+ .result .resultStage img{width:105px;height:105px}
+ .result .resultStage h3{font-size:clamp(23px,6vw,31px)}
+ .result .v3Secret{padding:30px 4px 20px}
+ .result .resultNav{justify-content:flex-start}
+}
 </style></head><body><div class="wrap"><header class="top"><div class="logo">a test for <i>maalkin.</i></div><div class="edition">JUST FOR YOU · VOL. 01</div></header><main id="app" aria-live="polite"></main><footer class="foot"><span>Made with a little too much thought. © Susan</span><span>20 questions · 2 choices · one Maalkin</span></footer></div>
 <script>
 'use strict';
