@@ -328,6 +328,46 @@ body:has(.result) .wrap{max-width:1600px;width:min(100%,1600px);padding-inline:c
 .result .resultNav{justify-content:center}
 .result .v3ChapterDivider{margin:23px 0 11px}
 }
+
+/* V4 structural redesign: unified results canvas and shared columns */
+body:has(.result) .wrap{max-width:1480px;padding-inline:clamp(20px,4vw,66px)}
+.result{--v4-width:1130px;max-width:var(--v4-width);width:100%;margin:0 auto;padding:35px 0 92px;--v4-divider:#e6dce9}
+.result .v3Hero,.result .boardPanel,.result .resultStage,.result .v3Secret{width:100%;max-width:none;box-sizing:border-box}
+.result .v3Hero{padding:30px 0 35px;background:none;min-height:0;border:0;border-bottom:1px solid var(--v4-divider);box-shadow:none;border-radius:0}
+.result .v3Hero:after,.result .v3Star{display:none}
+.result .resultsHeroGrid{grid-template-columns:minmax(0,1fr) 345px;gap:55px;align-items:end}
+.result .v3Hero h1,.result .v3Hero h1 em{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(35px,4.6vw,61px);font-weight:800;line-height:1.14;letter-spacing:-.05em;color:#282238;-webkit-text-fill-color:#282238}
+.result .v3Hero h1{margin:18px 0 29px;max-width:720px}
+.result .v3Count{font-size:clamp(78px,8vw,103px)}
+.result .v3Hero .resultGreeting{padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;color:#876b93;font-size:11px}
+.result .v3Progress{width:100%;border:0;border-left:1px solid var(--v4-divider);padding:24px 0 24px 28px}
+.result .v3ProgressTrack{height:14px}
+.result .v3ChapterDivider,.result .v3EndLabel{margin:30px 0 12px;padding:0;font-size:11px;letter-spacing:.1em;color:#786783}
+.result .v3ChapterDivider span{border:0;background:transparent;padding:0;width:auto;height:auto;font-weight:800}
+.result .boardPanel{padding:10px 0 28px;margin:0;border:0;border-bottom:1px solid var(--v4-divider);border-radius:0;background:transparent;box-shadow:none}
+.result .boardPanel .scoreboardHead{padding:0;margin:0 0 12px}
+.result .boardPanel .scoreboardHead h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(25px,3vw,34px);font-weight:800;letter-spacing:-.045em}
+.result .boardPanel .scoreRow{background:transparent;border:0;border-bottom:1px solid #e8e0eb;border-radius:0;box-shadow:none;margin:0;padding:18px 4px}
+.result .resultStage{padding:18px 0 32px;border:0;border-bottom:1px solid var(--v4-divider);background:none;box-shadow:none;border-radius:0;grid-template-columns:175px minmax(0,1fr);gap:45px}
+.result .resultStage img{width:170px;height:170px}
+.result .resultStage h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(25px,3vw,38px);font-weight:800;letter-spacing:-.035em}
+.result .resultStage p{font-size:16px;line-height:1.65}
+.result .resultNav{margin:22px 0 0;justify-content:flex-start}
+.result .v3EndLabel{margin-top:36px}
+.result .v3Secret{padding:30px 0 25px;border:0;border-top:1px solid var(--v4-divider);background:transparent;box-shadow:none;border-radius:0}
+.result .v3Secret h3{font-family:'Plus Jakarta Sans',sans-serif;max-width:700px;font-size:clamp(32px,4vw,48px)}
+.result .v3Secret .vaultReveal{max-width:390px}
+@media(max-width:760px){
+ .result{padding-top:17px}
+ .result .resultsHeroGrid{grid-template-columns:1fr;gap:3px}
+ .result .v3Hero{padding:20px 0 29px}
+ .result .v3Hero h1,.result .v3Hero h1 em{font-size:clamp(36px,9vw,51px)}
+ .result .v3Progress{border-left:0;border-top:1px solid var(--v4-divider);padding:18px 0 0}
+ .result .resultStage{grid-template-columns:100px minmax(0,1fr);gap:14px}
+ .result .resultStage img{width:96px;height:96px}
+ .result .resultStage h3{font-size:clamp(21px,5.5vw,29px)}
+ .result .v3Secret{padding:26px 0}
+}
 </style></head><body><div class="wrap"><header class="top"><div class="logo">a test for <i>maalkin.</i></div><div class="edition">JUST FOR YOU · VOL. 01</div></header><main id="app" aria-live="polite"></main><footer class="foot"><span>Made with a little too much thought. © Susan</span><span>20 questions · 2 choices · one Maalkin</span></footer></div>
 <script>
 'use strict';
