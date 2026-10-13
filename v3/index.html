@@ -208,6 +208,40 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--paper)}.wrap{ma
 .v3Hero .scoreDonut{box-shadow:0 12px 30px #9c759428}
 @media(max-width:620px){.v3Hero{padding:25px 20px}.v3Hero h1{font-size:clamp(37px,10vw,51px)}.v3Count{font-size:94px}.v3Secret{padding:25px 17px}.v3StarOne{font-size:23px}.resultStage{grid-template-columns:84px 1fr}.resultStage img{width:84px;height:84px}}
 @media(prefers-reduced-motion:reduce){.v3Secret .vaultReveal{transition:none}}
+
+/* V3 Cohesive results system: one grid, one rhythm, one design language */
+.result{--result-width:850px;max-width:var(--result-width);margin:0 auto;padding:30px 0 78px}
+.result .v3Hero,.result .boardPanel,.result .resultStage,.result .v3Secret{width:100%;max-width:none;box-sizing:border-box;margin-left:0;margin-right:0}
+.result .v3Hero{border-radius:27px;box-shadow:0 11px 31px #6d5b7715}
+.result .v3ChapterDivider{margin:25px 0 10px;padding:0 5px;font-size:11px;color:#806b90}
+.result .v3ChapterDivider span{width:27px;height:27px;border-radius:9px;background:#faf2fc}
+.result #scoreSaveStatus{font-size:12px;padding-left:6px;margin:0 0 8px;color:#887c90}
+.result .boardPanel{border-radius:23px;margin-top:0;margin-bottom:0;padding:25px 28px;background:linear-gradient(120deg,#f4effb,#edf3fc);border:1px solid #e4d7eb;box-shadow:0 11px 27px #77658512}
+.result .boardPanel .scoreboardHead h3{font-size:clamp(24px,3vw,31px);letter-spacing:-.035em}
+.result .boardPanel .scoreboardHead{margin-bottom:15px}
+.result .boardPanel .scoreRow{border:1px solid #ebe1ee;box-shadow:none;padding:13px 16px}
+.result .resultStage{grid-template-columns:135px minmax(0,1fr);gap:25px;border-radius:23px;margin:0;padding:23px 26px;background:linear-gradient(120deg,#fff8fd,#f6effb);box-shadow:0 11px 27px #77658512}
+.result .resultStage img{width:130px;height:130px;object-fit:contain}
+.result .resultStage h3{font-size:clamp(23px,3vw,30px);margin:3px 0 7px}
+.result .resultStage p{line-height:1.55}
+.result .resultNav{display:flex;align-items:center;gap:10px;margin:19px 0 0}
+.result .resultNav button{min-height:45px;border-radius:14px;font-size:13px;padding:11px 15px}
+.result #shareStatus{margin:5px 0}
+.result .v3EndLabel{margin:27px 0 10px;text-align:left;padding:0 5px;color:#806b90;font-size:11px;letter-spacing:.14em}
+.result .v3Secret{border-radius:23px;padding:27px 32px;box-shadow:0 11px 27px #77658512;background:linear-gradient(125deg,#fff8fd,#f7f1fa)}
+.result .v3Secret h3{font-size:clamp(28px,3.5vw,36px);max-width:640px;margin:10px auto}
+.result .v3Secret .v3Seal{width:48px;height:48px;font-size:25px;margin-bottom:12px}
+.result .v3Secret p{margin-bottom:12px}
+.result .v3Secret .vaultReveal{margin-top:16px}
+@media(max-width:620px){
+.result{padding-top:20px}
+.result .boardPanel{padding:17px 15px}
+.result .resultStage{grid-template-columns:95px minmax(0,1fr);gap:13px;padding:16px}
+.result .resultStage img{width:90px;height:90px}
+.result .resultNav{gap:8px}.result .resultNav button{flex:1 1 auto}
+.result .v3Secret{padding:23px 17px}
+.result .v3ChapterDivider{margin-top:19px}
+}
 </style></head><body><div class="wrap"><header class="top"><div class="logo">a test for <i>maalkin.</i></div><div class="edition">JUST FOR YOU · VOL. 01</div></header><main id="app" aria-live="polite"></main><footer class="foot"><span>Made with a little too much thought. © Susan</span><span>20 questions · 2 choices · one Maalkin</span></footer></div>
 <script>
 'use strict';
