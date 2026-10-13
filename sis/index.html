@@ -565,7 +565,7 @@ let questions=clone(STARTER),idx=0,score=0,choice=-1,locked=false,editorQuestion
 function valid(q){return typeof q.q==='string'&&q.q.trim()&&Array.isArray(q.o)&&q.o.length===2&&q.o.every(s=>typeof s==='string'&&s.trim())&&Number.isInteger(q.a)&&q.a>=0&&q.a<2}
 function mascot(mood='idle',tag='tiny but dramatic'){const mouths={idle:'M121 141 Q140 156 159 141',happy:'M119 137 Q140 168 161 137',thinking:'M124 144 Q140 139 155 144',wrong:'M123 157 Q140 138 157 157'};const eyes=mood==='wrong'?'<path d="M99 118l16 7m48-7l-16 7"/>':'<path d="M102 119v4m76-4v4"/>';return '<div class="scene"><span class="spark one">✳</span><span class="spark two">✦</span><svg class="mascot" data-mood="'+mood+'" viewBox="0 0 280 300" role="img" aria-label="Expressive doodle companion"><path class="body" d="M83 72Q56 33 39 44Q13 64 65 112Q47 147 49 205Q51 262 136 267Q231 268 236 201Q239 145 217 110Q270 55 246 42Q230 29 194 71Q139 48 83 72Z"/><path class="bow" d="M198 62Q236 39 228 83L205 103Q202 132 188 122Q165 118 180 96Q170 74 198 62Z"/><circle class="blush" cx="87" cy="146" r="13"/><circle class="blush" cx="195" cy="146" r="13"/><g class="feature">'+eyes+'<path d="'+mouths[mood]+'"/><path d="M138 132v2"/></g><path class="arm" d="M58 180L25 168m209 9 30-19"/></svg><span class="sceneLabel">'+esc(tag)+'</span></div>'}
 
-const SCORE_API="https://liyhjtyadbeozwjtrqqr.supabase.co/rest/v1/maalkin_sis_scores";
+const SCORE_API="https://liyhjtyadbeozwjtrqqr.supabase.co/rest/v1/maalkin_scores";
 const SCORE_KEY="sb_publishable_ZFK_hBjdVwvCAbupYSZGog_oH0TEAfe";
 let playerName='';
 const scoreHeaders={'apikey':SCORE_KEY,'Content-Type':'application/json'};
