@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#FFF1F5">
-<meta name="description" content="A tiny, ridiculously personal quiz made just for Maalkin."><title>A Test for Friends & Crushes ♡</title>
+<meta name="description" content="A tiny, ridiculously personal quiz made just for Maalkin."><title>Friends & Crush Mode ♡</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght,SOFT,WONK@9..144,700,20,1;9..144,800,20,1;9..144,900,20,1&display=swap" rel="stylesheet">
 <style>
@@ -368,7 +368,7 @@ body:has(.result) .wrap{max-width:1480px;padding-inline:clamp(20px,4vw,66px)}
  .result .resultStage h3{font-size:clamp(21px,5.5vw,29px)}
  .result .v3Secret{padding:26px 0}
 }
-.editionSwitch{display:flex;gap:8px;margin-bottom:19px}.editionSwitch a{padding:10px 17px;border:1px solid #e4cde4;color:#563d65;text-decoration:none;font-weight:800;border-radius:40px;background:white}</style></head><body><div class="wrap"><header class="top"><div class="logo">a test for <i>friends.</i></div><div class="edition">FRIENDS + CRUSHES</div></header><main id="app" aria-live="polite"></main><footer class="foot"><span>Made with a little too much thought. © Susan</span><span>20 questions · friendship and butterflies</span></footer></div>
+.editionSwitch{display:flex;gap:8px;margin-bottom:19px}.editionSwitch a{padding:10px 17px;border:1px solid #e4cde4;color:#563d65;text-decoration:none;font-weight:800;border-radius:40px;background:white}</style></head><body><div class="wrap"><header class="top"><div class="logo"><span>friends &amp; <i>crush.</i></span></div><div class="edition">FRIENDS & CRUSH MODE</div></header><main id="app" aria-live="polite"></main><footer class="foot"><span>Made with a little too much thought. © Susan</span><span>20 questions · friendship and butterflies</span></footer></div>
 <script>
 'use strict';
 const STARTER=[
@@ -565,8 +565,7 @@ let questions=clone(STARTER),idx=0,score=0,choice=-1,locked=false,editorQuestion
 function valid(q){return typeof q.q==='string'&&q.q.trim()&&Array.isArray(q.o)&&q.o.length===2&&q.o.every(s=>typeof s==='string'&&s.trim())&&Number.isInteger(q.a)&&q.a>=0&&q.a<2}
 function mascot(mood='idle',tag='tiny but dramatic'){const mouths={idle:'M121 141 Q140 156 159 141',happy:'M119 137 Q140 168 161 137',thinking:'M124 144 Q140 139 155 144',wrong:'M123 157 Q140 138 157 157'};const eyes=mood==='wrong'?'<path d="M99 118l16 7m48-7l-16 7"/>':'<path d="M102 119v4m76-4v4"/>';return '<div class="scene"><span class="spark one">✳</span><span class="spark two">✦</span><svg class="mascot" data-mood="'+mood+'" viewBox="0 0 280 300" role="img" aria-label="Expressive doodle companion"><path class="body" d="M83 72Q56 33 39 44Q13 64 65 112Q47 147 49 205Q51 262 136 267Q231 268 236 201Q239 145 217 110Q270 55 246 42Q230 29 194 71Q139 48 83 72Z"/><path class="bow" d="M198 62Q236 39 228 83L205 103Q202 132 188 122Q165 118 180 96Q170 74 198 62Z"/><circle class="blush" cx="87" cy="146" r="13"/><circle class="blush" cx="195" cy="146" r="13"/><g class="feature">'+eyes+'<path d="'+mouths[mood]+'"/><path d="M138 132v2"/></g><path class="arm" d="M58 180L25 168m209 9 30-19"/></svg><span class="sceneLabel">'+esc(tag)+'</span></div>'}
 
-const socialMode=new URLSearchParams(location.search).get('mode')==='crush'?'crush':'friends';
-const SCORE_API="https://liyhjtyadbeozwjtrqqr.supabase.co/rest/v1/"+(socialMode==='crush'?'maalkin_crush_scores':'maalkin_friends_scores');
+const SCORE_API="https://liyhjtyadbeozwjtrqqr.supabase.co/rest/v1/maalkin_scores";
 const SCORE_KEY="sb_publishable_ZFK_hBjdVwvCAbupYSZGog_oH0TEAfe";
 let playerName='';
 const scoreHeaders={'apikey':SCORE_KEY,'Content-Type':'application/json'};
@@ -594,8 +593,7 @@ async function submitScore(){
 
 
 function renderWelcome(){
- const modeNav='<div class="editionSwitch"><a href="?mode=friends">Friends 😎</a><a href="?mode=crush">Crush 🤭</a></div>';
- app.innerHTML='<section class="hero enter"><div>'+modeNav+'<div class="eyebrow">a very unofficial friendship test</div><h1 class="serif">Oye,<br><em>Bestie.</em><br>Know me?</h1><p class="lead">Time to see how many of my tiny habits you actually remember. Two choices, a few plot twists, and a surprise at the end.</p><div class="namePanel"><div class="nameHeart">💗</div><label for="playerName">what’s your <em>name?</em></label><div class="nameInputWrap"><input id="playerName" class="field" autocomplete="nickname" maxlength="15" placeholder="name..." aria-label="Your name" value="'+esc(playerName)+'"><span id="nameLen">'+playerName.length+'/15</span></div><button class="primary" id="start" disabled>Continue <span>➜</span></button><p class="minor">Your name and score will appear on the public scoreboard.</p></div><p class="minor">20 tiny questions · 4 mini chapters · friends and crushes</p></div><div class="heroArt">'+picture(EXTRA_REACTIONS[0].image,EXTRA_REACTIONS[0].main)+'<div class="heroCaption"><span>THE CHALLENGE</span><strong>'+esc(EXTRA_REACTIONS[0].main)+'</strong><small>'+esc(EXTRA_REACTIONS[0].subtitle)+'</small></div></div></section><section class="boardPanel" id="welcomeLeaderboard"><p class="minor">Loading scores…</p></section>';
+ app.innerHTML='<section class="hero enter"><div><div class="eyebrow">the friends & crush mode</div><h1 class="serif">Oye,<br><em>Bestie.</em><br>Or maybe…?</h1><p class="lead">Time to see how many of my tiny habits you actually remember. Two choices, a few plot twists, and a surprise at the end.</p><div class="namePanel"><div class="nameHeart">💗</div><label for="playerName">what’s your <em>name?</em></label><div class="nameInputWrap"><input id="playerName" class="field" autocomplete="nickname" maxlength="15" placeholder="name..." aria-label="Your name" value="'+esc(playerName)+'"><span id="nameLen">'+playerName.length+'/15</span></div><button class="primary" id="start" disabled>Continue <span>➜</span></button><p class="minor">Your name and score will appear on the public scoreboard.</p></div><p class="minor">20 tiny questions · one playful friends & crush mode</p></div><div class="heroArt">'+picture(EXTRA_REACTIONS[0].image,EXTRA_REACTIONS[0].main)+'<div class="heroCaption"><span>THE CHALLENGE</span><strong>'+esc(EXTRA_REACTIONS[0].main)+'</strong><small>'+esc(EXTRA_REACTIONS[0].subtitle)+'</small></div></div></section><section class="boardPanel" id="welcomeLeaderboard"><p class="minor">Loading scores…</p></section>';
  const input=document.getElementById('playerName'),button=document.getElementById('start');
  function update(){button.disabled=!input.value.trim();document.getElementById('nameLen').textContent=input.value.length+'/15';}
  input.addEventListener('input',update);input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!button.disabled)button.click()});update();
