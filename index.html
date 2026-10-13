@@ -368,7 +368,7 @@ body:has(.result) .wrap{max-width:1480px;padding-inline:clamp(20px,4vw,66px)}
  .result .resultStage h3{font-size:clamp(21px,5.5vw,29px)}
  .result .v3Secret{padding:26px 0}
 }
-</style></head><body><div class="wrap"><header class="top"><div class="logo">a test for <i>maalkin.</i></div><div class="edition">JUST FOR YOU · VOL. 01</div></header><main id="app" aria-live="polite"></main><footer class="foot"><span>Made with a little too much thought. © Susan</span><span>20 questions · 2 choices · one Maalkin</span></footer></div>
+.startInvitation{font-weight:800;font-size:clamp(19px,2vw,26px);line-height:1.35;margin:4px 0 18px}.namePanel #start{width:100%}</style></head><body><div class="wrap"><header class="top"><div class="logo">a test for <i>maalkin.</i></div><div class="edition">JUST FOR YOU · VOL. 01</div></header><main id="app" aria-live="polite"></main><footer class="foot"><span>Made with a little too much thought. © Susan</span><span>20 questions · 2 choices · one Maalkin</span></footer></div>
 <script>
 'use strict';
 const STARTER=[
@@ -593,11 +593,8 @@ async function submitScore(){
 
 
 function renderWelcome(){
- app.innerHTML='<section class="hero enter"><div><div class="eyebrow">an extremely unofficial love-and-chaos investigation</div><h1 class="serif">Oye,<br><em>Maalkin.</em><br>Prove it.</h1><p class="lead">You say you know me. Cute. Let’s see how much you <em>actually</em> remember. Two choices, a few plot twists, and a surprise at the end.</p><div class="namePanel"><div class="nameHeart">💗</div><label for="playerName">what’s your <em>name?</em></label><div class="nameInputWrap"><input id="playerName" class="field" autocomplete="nickname" maxlength="15" placeholder="name..." aria-label="Your name" value="'+esc(playerName)+'"><span id="nameLen">'+playerName.length+'/15</span></div><button class="primary" id="start" disabled>Continue <span>➜</span></button><p class="minor">Your name and score will appear on the public scoreboard.</p></div><p class="minor">20 tiny questions · 4 mini chapters · made for exactly one person</p></div><div class="heroArt">'+picture(EXTRA_REACTIONS[0].image,EXTRA_REACTIONS[0].main)+'<div class="heroCaption"><span>THE CHALLENGE</span><strong>'+esc(EXTRA_REACTIONS[0].main)+'</strong><small>'+esc(EXTRA_REACTIONS[0].subtitle)+'</small></div></div></section><section class="boardPanel" id="welcomeLeaderboard"><p class="minor">Loading scores…</p></section>';
- const input=document.getElementById('playerName'),button=document.getElementById('start');
- function update(){button.disabled=!input.value.trim();document.getElementById('nameLen').textContent=input.value.length+'/15';}
- input.addEventListener('input',update);input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!button.disabled)button.click()});update();
- button.onclick=()=>{const name=input.value.trim();if(!name)return;playerName=name;idx=0;score=0;results=[];renderQuestion()};
+ app.innerHTML='<section class="hero enter"><div><div class="eyebrow">an extremely unofficial love-and-chaos investigation</div><h1 class="serif">Oye,<br><em>Maalkin.</em><br>Prove it.</h1><p class="lead">You say you know me. Cute. Let’s see how much you <em>actually</em> remember. Two choices, a few plot twists, and a surprise at the end.</p><div class="namePanel"><div class="nameHeart">💗</div><p class="startInvitation">Ready for your 20-question challenge?</p><button class="primary" id="start">Start the test <span>➜</span></button><p class="minor">Your score will appear on the shared scoreboard as Maalkin.</p></div><p class="minor">20 tiny questions · 4 mini chapters · made for exactly one person</p></div><div class="heroArt">'+picture(EXTRA_REACTIONS[0].image,EXTRA_REACTIONS[0].main)+'<div class="heroCaption"><span>THE CHALLENGE</span><strong>'+esc(EXTRA_REACTIONS[0].main)+'</strong><small>'+esc(EXTRA_REACTIONS[0].subtitle)+'</small></div></div></section><section class="boardPanel" id="welcomeLeaderboard"><p class="minor">Loading scores…</p></section>';
+ document.getElementById('start').onclick=()=>{playerName='Maalkin';idx=0;score=0;results=[];renderQuestion()};
  loadScoreboard('welcomeLeaderboard');
 }
 function chapterFor(i){return Math.min(3,Math.floor(i/(questions.length/4)))}
